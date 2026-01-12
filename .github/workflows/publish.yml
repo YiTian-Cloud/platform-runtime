@@ -1,4 +1,4 @@
-name: Publish Platform SDK
+name: Publish Platform Runtime
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com
-          scope: "@YOUR_ORG"
+          scope: "@yitian-cloud"
 
       - run: pnpm install
       - run: pnpm build
