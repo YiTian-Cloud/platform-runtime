@@ -1,0 +1,65 @@
+{
+  "name": "@yitian-cloud/platform-runtime",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "Enterprise RAG platform runtime SDK (auth, logging, tracing, policy, http).",
+  "license": "UNLICENSED",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./logger": {
+      "types": "./dist/logger/index.d.ts",
+      "default": "./dist/logger/index.js"
+    },
+    "./env": {
+      "types": "./dist/env/index.d.ts",
+      "default": "./dist/env/index.js"
+    },
+    "./http": {
+      "types": "./dist/http/index.d.ts",
+      "default": "./dist/http/index.js"
+    },
+    "./request-context": {
+      "types": "./dist/request-context/index.d.ts",
+      "default": "./dist/request-context/index.js"
+    },
+    "./auth": {
+      "types": "./dist/auth/index.d.ts",
+      "default": "./dist/auth/index.js"
+    },
+    "./policy-client": {
+      "types": "./dist/policy-client/index.d.ts",
+      "default": "./dist/policy-client/index.js"
+    },
+    "./telemetry": {
+      "types": "./dist/telemetry/index.d.ts",
+      "default": "./dist/telemetry/index.js"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm clean && pnpm build"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "undici": "^6.23.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.0.6",
+    "typescript": "^5.6.3"
+  }
+}
